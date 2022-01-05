@@ -23,7 +23,7 @@ def merge_intervals(intervals):
             merged.append(interval)
         else:
             merged[-1][1] = max(interval[1],merged[-1][1])
-    return merged
+    print(merged)
 
 intervals = [[1,3],[8,10],[15,18],[2,6]]
-print(merge_intervals(intervals))
+merge_intervals(intervals)

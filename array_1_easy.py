@@ -21,15 +21,29 @@ Output: [0,1]
 """
 
 
-def two_sum(nums, target):
-        for i in range(0,len(nums)):
-            temp = nums[i]
-            for j in range(i+1, len(nums)):
-                if(temp + nums[j] == target):
-                    return [i,j]
+# def two_sum(nums, target):
+#         for i in range(0,len(nums)):
+#             temp = nums[i]
+#             for j in range(i+1, len(nums)):
+#                 if(temp + nums[j] == target):
+#                     return [i,j]
 
-nums = [2,7,11,15] 
-target = 9
-print(two_sum(nums,target))
+# nums = [2,7,11,15] 
+# target = 9
+# print(two_sum(nums,target))
 
 # Can be solved with Hash table with O(N)
+
+def two_sum_hashmap(nums, target):
+    hashmap = {}
+    for i in range(0,len(nums)):
+        hashmap[nums[i]] = i
+    
+    for i in range(0,len(nums)):
+        compl = target - nums[i]
+        if(compl in hashmap and hashmap[compl]!= i):
+            return[i,hashmap[compl]]
+
+nums = [2,7,11,15] 
+target = 10
+print(two_sum_hashmap(nums,target))
