@@ -4,7 +4,9 @@ Singly linked List with
 1. Print Linked list
 2. Add in the begining
 3. Add in the end
-
+4. delete at start
+5. delete at end
+6. delete by value
 
 '''
 
@@ -54,11 +56,10 @@ class LinkedList():
         if(self.headval.val == val):
             self.delete_first()
         else:
-            while(list.nextval.nextval):
-                if(list.nextval.val == val):
-                    print(list.nextval)
-                    print(list.nextval.nextval)
-                    list.nextval = list.nextval.nextval
+            while(list.nextval):
+                if(list.val == val):
+                    prev.nextval = list.nextval
+                prev = list
                 list = list.nextval
 
 
@@ -82,3 +83,5 @@ list.add_at_start("Sun")
 # list.delete_first()
 list.listprint()
 list.delete_elem("Wed")
+list.listprint()
+
