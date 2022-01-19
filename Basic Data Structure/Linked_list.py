@@ -29,7 +29,6 @@ class LinkedList():
         new_node = Node(val)
         if self.headval is None:
             self.headval = new_node
-            return
         else:
             list = self.headval
             while (list.nextval):

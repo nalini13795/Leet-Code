@@ -36,19 +36,16 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        printval = head
-        temp_val =[]
-        while printval is not None:
-            temp_val.append(printval.val)
-            printval = printval.next
-            
-        temp = ListNode()
-        output = temp
-        for ele in temp_val[::-1]:
-            temp.next = ListNode(ele)
-            temp = temp.next
-            
-        return(output.next)
+        prev = None
+        curr = head
+        while (curr):
+            temp = curr
+            curr = curr.next
+            temp.next = prev
+            prev = temp
+        
+
+        return prev
             
 
 list1 = ListNode(1)
